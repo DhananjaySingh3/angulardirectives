@@ -77,4 +77,10 @@ export class AppComponent {
     }
   }
 
+  /** For showing page-links when user clicks on Next button */
+  checkPageIndex(index: number) {
+    /** Finding difference between current page and index */
+    return Math.abs(this.currentPage - index) < 5;
+  }
+
 }

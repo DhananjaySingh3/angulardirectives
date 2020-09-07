@@ -3,9 +3,11 @@
     <li class="page-item" [ngClass]="{disabled: currentPage === 0}"><a class="page-link"
         (click)="currentPage = currentPage-1">Previous</a></li>
     <!-- Method-1 of using ngClass start -->
-    <li class="page-item" *ngFor="let image of images; let i = index" [ngClass]="{active: i === currentPage}">
-      <a class="page-link" (click)="currentPage = i">{{i+1}}</a>
-    </li>
+    <ng-container *ngFor="let image of images; let i = index">
+      <li class="page-item" *ngIf="checkPageIndex(i)" [ngClass]="{active: i === currentPage}">
+        <a class="page-link" (click)="currentPage = i">{{i+1}}</a>
+      </li>
+    </ng-container>
     <!-- Method-1 of using ngClass end -->
 
     <!-- Method-2 of using ngClass start addActiveClass-->
