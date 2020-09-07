@@ -1,9 +1,10 @@
 <nav class="col-xs-12">
   <ul class="pagination">
-    <li class="page-item" [ngClass]="{disabled: currentPage === 0}"><a class="page-link">Previous</a></li>
+    <li class="page-item" [ngClass]="{disabled: currentPage === 0}"><a class="page-link"
+        (click)="currentPage = currentPage-1">Previous</a></li>
     <!-- Method-1 of using ngClass start -->
     <li class="page-item" *ngFor="let image of images; let i = index" [ngClass]="{active: i === currentPage}">
-      <a class="page-link">{{i+1}}</a>
+      <a class="page-link" (click)="currentPage = i">{{i+1}}</a>
     </li>
     <!-- Method-1 of using ngClass end -->
 
@@ -19,6 +20,7 @@
     </li> -->
     <!-- Method-3 of using ngClass end -->
 
-    <li class="page-item" [ngClass]="getClass()"><a class="page-link">Next</a></li>
+    <li class="page-item" [ngClass]="getClass()"><a class="page-link" (click)="currentPage = currentPage+1">Next</a>
+    </li>
   </ul>
 </nav>

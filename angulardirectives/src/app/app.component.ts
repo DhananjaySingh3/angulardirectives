@@ -16,7 +16,7 @@ export class AppComponent {
   ];
 
   /* Used in method-1 of ngClass */
-  currentPage = 5; // 0 to check Prev btn gets disabled
+  currentPage = 0; // 0 to check Prev btn gets disabled
 
   /* Used in method-2 of ngClass */
 
